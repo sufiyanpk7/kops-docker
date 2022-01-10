@@ -11,6 +11,7 @@ RUN apt-get install unzip -y
 RUN apt-get install wget -y 
 # vim
 RUN apt-get install -y vim
+RUN apt-get install openssh-client
 
 RUN apt-get install -y gnupg2
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
