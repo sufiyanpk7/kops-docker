@@ -22,6 +22,8 @@ RUN  wget https://github.com/kubernetes/kops/releases/download/v1.22.3/kops-linu
 RUN chmod +x kops-linux-amd64
 RUN mv kops-linux-amd64 /usr/local/bin/kops
 RUN apt-get install -y  awscli 
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+RUN mv /tmp/eksctl /usr/local/bin
 RUN mkdir /home/ubuntu/ /home/ubuntu/kops
 WORKDIR /home/ubuntu/kops
 ENTRYPOINT /bin/bash
