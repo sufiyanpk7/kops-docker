@@ -18,4 +18,5 @@ docker run -it -d docker.io/sufiyanpk/kops-docker:beta /bin/bash
  - /home/ubuntu/kops 
  - /root/.ssh 
  - /root/.aws
+ - /root/.kube
 ```
