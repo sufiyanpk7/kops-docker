@@ -22,6 +22,13 @@ RUN  wget https://github.com/kubernetes/kops/releases/download/v1.25.1/kops-linu
 RUN chmod +x kops-linux-amd64
 RUN mv kops-linux-amd64 /usr/local/bin/kops
 RUN apt-get install -y  awscli 
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+RUN mv /tmp/eksctl /usr/local/bin
 RUN mkdir /home/ubuntu/ /home/ubuntu/kops
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+RUN chmod 700 get_helm.sh
+RUN ./get_helm.sh
+RUN rm get_helm.sh
+
 WORKDIR /home/ubuntu/kops
 ENTRYPOINT /bin/bash
