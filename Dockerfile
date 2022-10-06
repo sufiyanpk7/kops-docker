@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
 RUN apt-get update &&  apt-get install -y apt-transport-https curl
 RUN apt-get install -y nano
+RUN apt-get install -y telnet
+RUN apt-get install -y host
+RUN apt-get install -y net-tools
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get install -y --no-install-recommends tzdata
 RUN echo "Asia/Dubai" > /etc/timezone
