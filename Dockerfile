@@ -21,7 +21,7 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
 RUN echo deb https://apt.kubernetes.io/ kubernetes-xenial main | tee -a /etc/apt/sources.list.d/kubernetes.list
 RUN  apt-get update
 RUN  apt-get install -y kubectl
-RUN  wget https://github.com/kubernetes/kops/releases/download/v1.25.1/kops-linux-amd64
+RUN  wget https://github.com/kubernetes/kops/releases/download/v1.24.2/kops-linux-amd64
 RUN chmod +x kops-linux-amd64
 RUN mv kops-linux-amd64 /usr/local/bin/kops
 RUN apt-get install -y  awscli 
